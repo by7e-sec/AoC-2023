@@ -4,15 +4,6 @@ import re
 
 data = open("ref4.txt").readlines()
 
-def get_points(data):
-    out = 1
-
-    for _ in data:
-        out *= 2
-
-    return int(out / 2)
-    
-
 calc = []
 for row in data:
     row = row.strip().split(":")[1]
@@ -22,7 +13,7 @@ for row in data:
     res = their_card.intersection(my_card)
     if len(res):
         # calc.append(res)
-        calc.append(get_points(res))
+        calc.append(int(2 ** len(res) / 2))
 
 print(sum(calc))
 # print(calc)
