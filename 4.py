@@ -6,10 +6,8 @@ data = open("ref4.txt").readlines()
 
 def get_points(data):
     out = 1
-    if len(data) == 1:
-        return out
 
-    for item in data:
+    for _ in data:
         out *= 2
 
     return int(out / 2)
